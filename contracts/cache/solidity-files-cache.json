@@ -1,0 +1,118 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Kelvin\\Desktop\\AetherCredit\\contracts\\src\\CreditScorer.sol": {
+      "lastModificationDate": 1778581726301,
+      "contentHash": "87c5fb7263ebf4176150d5ca331ebb9d",
+      "sourceName": "src/CreditScorer.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "evmVersion": "london",
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./WorkRegistry.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "CreditScorer"
+      ]
+    },
+    "C:\\Users\\Kelvin\\Desktop\\AetherCredit\\contracts\\src\\WorkRegistry.sol": {
+      "lastModificationDate": 1778578409228,
+      "contentHash": "beff675cc690ec22b4bf83fd15ec42e7",
+      "sourceName": "src/WorkRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "evmVersion": "london",
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "WorkRegistry"
+      ]
+    },
+    "C:\\Users\\Kelvin\\Desktop\\AetherCredit\\contracts\\src\\CreditVault.sol": {
+      "lastModificationDate": 1778578806683,
+      "contentHash": "be2caa608131482bdd2d72f7f6dbe462",
+      "sourceName": "src/CreditVault.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "evmVersion": "london",
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./CreditScorer.sol",
+        "./WorkRegistry.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "CreditVault"
+      ]
+    }
+  }
+}

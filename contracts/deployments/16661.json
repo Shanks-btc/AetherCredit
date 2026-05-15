@@ -1,0 +1,12 @@
+{
+  "network": "mainnet",
+  "chainId": "16661",
+  "deployedAt": "2026-05-12T10:32:46.511Z",
+  "deployer": "0xeFb9014198317F703408069CDA811e1253601A92",
+  "contracts": {
+    "WorkRegistry": "0x2B1F86F72A1112C3390FdFC8c4A1C5b21BA2d6DC",
+    "CreditScorer": "0x6902b2F9BFfb492B86D3BF1D91Ab541C2ED31602",
+    "CreditVault": "0xa4bFBBd8dfEa64CD335F7F065f2c724AE7CFe49D"
+  },
+  "explorer": "https://chainscan.0g.ai"
+}

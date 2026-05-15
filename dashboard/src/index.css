@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── DARK MODE (default) ── */
+  body.dark {
+    background-color: #0a0f1e;
+    color: #f8fafc;
+  }
+
+  /* ── LIGHT MODE ── */
+  body.light {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+}
+
+@layer utilities {
+  /* ── Cards ── */
+  .card-dark {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+  }
+
+  .card-light {
+    background: white;
+    border: 0.5px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* ── Stat cards ── */
+  .stat-dark {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(51, 65, 85, 0.4);
+  }
+
+  .stat-light {
+    background: white;
+    border: 0.5px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+
+  /* ── Text ── */
+  .text-primary-dark  { color: #f8fafc; }
+  .text-primary-light { color: #0f172a; }
+  .text-muted-dark    { color: #94a3b8; }
+  .text-muted-light   { color: #64748b; }
+
+  /* ── Nav ── */
+  .nav-dark  { background: rgba(15, 23, 42, 0.9); border-bottom: 1px solid rgba(51,65,85,0.5); }
+  .nav-light { background: white; border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+
+  /* ── Table rows ── */
+  .row-dark  { border-bottom: 1px solid rgba(51,65,85,0.3); }
+  .row-light { border-bottom: 1px solid #f1f5f9; }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
