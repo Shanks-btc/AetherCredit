@@ -1,11 +1,24 @@
 /**
  * @file data/mock.ts
  * @description Demo data for new wallets with no compute history.
- * Shown automatically when score = 0 and no work records exist.
- * Structured to match real API response shapes exactly.
  */
 
-// ── Protocol stats (shown on landing page) ────────────────────────────────────
+// ── Agent type ────────────────────────────────────────────────────────────────
+export type Agent = {
+  address:         string
+  shortAddress:    string
+  score:           number
+  limitOG:         string
+  verifiedJobs:    number
+  totalBorrowedOG: string
+  totalRepaidOG:   string
+  activeLoans:     number
+  defaults:        number
+  risk:            string
+  lastActive:      number
+}
+
+// ── Protocol stats ────────────────────────────────────────────────────────────
 export const MOCK_PROTOCOL_STATS = {
   totalDisbursedOG:  '8.20',
   repaymentRatePct:  97.3,
@@ -88,9 +101,10 @@ export const MOCK_POOL_HEALTH = {
 }
 
 // ── Demo agents leaderboard ───────────────────────────────────────────────────
-export const MOCK_AGENTS = [
+export const MOCK_AGENTS: Agent[] = [
   {
     address:         '0x8cfE33b6A26A0797e4C7E7FEB39290e08258c262',
+    shortAddress:    '0x8cfE...8262',
     score:           413,
     limitOG:         '0.826',
     verifiedJobs:    10,
@@ -103,6 +117,7 @@ export const MOCK_AGENTS = [
   },
   {
     address:         '0xeFb9014198317F703408069CDA811e1253601A92',
+    shortAddress:    '0xeFb9...1A92',
     score:           820,
     limitOG:         '1.640',
     verifiedJobs:    21,
@@ -115,6 +130,7 @@ export const MOCK_AGENTS = [
   },
   {
     address:         '0xf6e345D3C7B44C4D7cD27F34D8e9e1D55A112142',
+    shortAddress:    '0xf6e3...2142',
     score:           276,
     limitOG:         '0.552',
     verifiedJobs:    6,
@@ -127,6 +143,7 @@ export const MOCK_AGENTS = [
   },
   {
     address:         '0x1234567890abcdef1234567890abcdef12345678',
+    shortAddress:    '0x1234...5678',
     score:           540,
     limitOG:         '1.080',
     verifiedJobs:    14,
@@ -139,6 +156,7 @@ export const MOCK_AGENTS = [
   },
   {
     address:         '0xabcdef1234567890abcdef1234567890abcdef12',
+    shortAddress:    '0xabcd...ef12',
     score:           120,
     limitOG:         '0.240',
     verifiedJobs:    3,

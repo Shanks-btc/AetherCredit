@@ -23,6 +23,14 @@ import {
   MOCK_POOL_HEALTH,
 } from '../data/mock'
 
+function weiToOG(wei: string, decimals = 2): string {
+  try {
+    return (Number(BigInt(wei)) / 1e18).toFixed(decimals) + ' OG'
+  } catch {
+    return '0.00 OG'
+  }
+}
+
 export function Dashboard() {
   const { address }   = useAccount()
   const queryClient   = useQueryClient()
@@ -40,7 +48,6 @@ export function Dashboard() {
     queryClient.invalidateQueries({ queryKey: ['poolBalance']  })
   }
 
-  // Demo mode — always show data, never blank
   const isDemoMode = !profileLoading && !profile
 
   const score         = isDemoMode ? MOCK_AGENT_PROFILE.score         : (profile?.score        ?? 0)
@@ -73,6 +80,7 @@ export function Dashboard() {
           </button>
         }
       />
+
       {/* Stats */}
       <MetricGrid cols={4}>
         <StatCard
@@ -84,7 +92,7 @@ export function Dashboard() {
         />
         <StatCard
           label="Credit Limit"
-          value={profileLoading ? '...' : <OGAmount wei={limitWei} decimals={2} />}
+          value={profileLoading ? '...' : weiToOG(limitWei)}
           sub="max borrowable"
           accent="green"
           icon="↑"
@@ -98,7 +106,7 @@ export function Dashboard() {
         />
         <StatCard
           label="Pool Available"
-          value={poolData ? <OGAmount wei={poolData.availableWei ?? '0'} decimals={2} /> : '...'}
+          value={poolData ? weiToOG(poolData.availableWei ?? '0') : '...'}
           sub="ready to disburse"
           accent="cyan"
           icon="◈"
