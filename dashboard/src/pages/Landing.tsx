@@ -276,8 +276,7 @@ export function Landing() {
               onClick={() => navigate('/onboard')}
               className="rounded-xl bg-indigo-600 hover:bg-indigo-500 px-8 py-3.5 text-base font-semibold text-white transition-all hover:scale-105"
             >
-              Get Started →
-            </button>
+              Subscribe →            </button>
             <button
               onClick={() => navigate('/waitlist')}
               className={`rounded-xl border px-8 py-3.5 text-base font-semibold transition-all ${isDark ? 'border-indigo-500/30 text-indigo-400 hover:border-indigo-500/60' : 'border-indigo-200 text-indigo-600 hover:border-indigo-300'}`}

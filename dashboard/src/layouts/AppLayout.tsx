@@ -1,10 +1,18 @@
-import { Outlet }    from 'react-router-dom'
-import { Navbar }    from '../components/layout/Navbar'
-import { Footer }    from '../components/layout/Footer'
-import { useTheme }  from '../lib/theme'
+import { Outlet, Navigate } from 'react-router-dom'
+import { Navbar }           from '../components/layout/Navbar'
+import { Footer }           from '../components/layout/Footer'
+import { useTheme }         from '../lib/theme'
+
+function hasOnboarded(): boolean {
+  return localStorage.getItem('ac_onboarded') === 'true'
+}
 
 export function AppLayout() {
   const { isDark } = useTheme()
+
+  if (!hasOnboarded()) {
+    return <Navigate to="/onboard" replace />
+  }
 
   return (
     <div className={`min-h-screen flex flex-col ${isDark ? 'bg-slate-950' : 'bg-slate-50'}`}>

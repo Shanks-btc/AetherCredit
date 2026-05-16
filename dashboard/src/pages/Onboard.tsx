@@ -493,7 +493,10 @@ export function Onboard() {
                 </div>
 
                 <button
-                  onClick={() => navigate('/dashboard')}
+                  onClick={() => {
+                    localStorage.setItem('ac_onboarded', 'true')
+                    navigate('/dashboard')
+                  }}
                   className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all"
                 >
                   Go to Dashboard
