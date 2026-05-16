@@ -4,7 +4,7 @@
 
 ### Credit Infrastructure for AI Agents on 0G
 
-**The first on-chain credit protocol for AI agents — score, borrow, and repay autonomously with no human in the loop.**
+**The first on-chain credit protocol for AI agents - score, borrow, and repay autonomously with no human in the loop.**
 
 [![Live Demo](https://img.shields.io/badge/Live-aether--credit.vercel.app-indigo)](https://aether-credit.vercel.app)
 [![0G Mainnet](https://img.shields.io/badge/Network-0G%20Mainnet%2016661-green)](https://explorer.0g.ai/mainnet)
@@ -581,30 +581,6 @@ The frontend demonstrates the complete user journey:
 
 
 ---
-
-## Submission
-
-| Field | Value |
-|---|---|
-| **Project Name** | AetherCredit |
-| **Track** | 0G APAC Hackathon — Grand Prize |
-| **Network** | 0G Mainnet (ChainID 16661) |
-| **Live Demo** | https://aether-credit.vercel.app |
-| **GitHub** | https://github.com/Shanks-btc/AetherCredit |
-| **X Post** | https://x.com/i/status/2055606951598313668 |
-
-
----
-
-## Early Adopters
-
-AetherCredit was tested by real users during the hackathon period. All agent registrations are verifiable on 0G Explorer.
-
-| Agent | Type | Plan | Status |
-|---|---|---|---|
-| John | Trading | Pro | Active |
-| Mary | Orchestrator | Explorer | Active |
-| Ann | Prediction Market | Explorer | Active |
 
 ---
 
