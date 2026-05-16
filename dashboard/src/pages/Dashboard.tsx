@@ -17,6 +17,7 @@ import { useActiveLoan }     from '../hooks/useActiveLoan'
 import { useWorkHistory }    from '../hooks/useWorkHistory'
 import { usePoolBalance }    from '../hooks/usePoolBalance'
 import { useTheme }          from '../lib/theme'
+import type { PoolHealth }   from '../lib/api'
 import {
   MOCK_AGENT_PROFILE,
   MOCK_WORK_RECORDS,
@@ -56,7 +57,14 @@ export function Dashboard() {
   const totalSpendWei = isDemoMode ? MOCK_AGENT_PROFILE.totalSpendWei : (profile?.totalSpendWei ?? '0')
   const hasActiveLoan = loan?.hasActiveLoan ?? false
   const workRecords   = isDemoMode ? MOCK_WORK_RECORDS : (history?.onChain ?? [])
-  const poolData      = isDemoMode ? MOCK_POOL_HEALTH  : pool
+  const poolData: PoolHealth = isDemoMode
+    ? MOCK_POOL_HEALTH
+    : {
+        availableWei:    (pool as any)?.availableWei    ?? '0',
+        totalFundedWei:  (pool as any)?.totalFundedWei  ?? '0',
+        totalLentWei:    (pool as any)?.totalLentWei    ?? '0',
+        totalBadDebtWei: (pool as any)?.totalBadDebtWei ?? '0',
+      }
 
   const card   = isDark ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200 shadow-sm'
   const muted  = isDark ? 'text-slate-400' : 'text-slate-500'
@@ -81,7 +89,6 @@ export function Dashboard() {
         }
       />
 
-      {/* Stats */}
       <MetricGrid cols={4}>
         <StatCard
           label="Credit Score"
@@ -106,22 +113,19 @@ export function Dashboard() {
         />
         <StatCard
           label="Pool Available"
-          value={poolData ? weiToOG(poolData.availableWei ?? '0') : '...'}
+          value={weiToOG(poolData.availableWei)}
           sub="ready to disburse"
           accent="cyan"
           icon="◈"
         />
       </MetricGrid>
 
-      {/* Main grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* Score panel */}
         <div className={`rounded-2xl border p-6 space-y-5 ${card}`}>
           <h2 className={`text-sm font-semibold uppercase tracking-wider ${muted}`}>
             Credit Score
           </h2>
-
           {profileLoading ? <LoadingSpinner /> : (
             <>
               <div className="flex justify-center">
@@ -135,7 +139,6 @@ export function Dashboard() {
               />
             </>
           )}
-
           <div className={`pt-4 border-t ${border} space-y-2`}>
             <div className={`text-xs ${muted} mb-2`}>Verify on-chain</div>
             <div className="space-y-1.5">
@@ -146,14 +149,11 @@ export function Dashboard() {
           </div>
         </div>
 
-        {/* Loan + Pool */}
         <div className="lg:col-span-2 space-y-5">
-
           <div className={`rounded-2xl border p-6 ${card}`}>
             <h2 className={`text-sm font-semibold uppercase tracking-wider mb-4 ${muted}`}>
               {hasActiveLoan ? 'Active Loan' : 'Request Credit'}
             </h2>
-
             {loanLoading ? <LoadingSpinner /> : hasActiveLoan && loan ? (
               <div className="space-y-4">
                 <ActiveLoanCard loan={{
@@ -172,35 +172,31 @@ export function Dashboard() {
             )}
           </div>
 
-          {/* Pool health */}
-          {poolData && (
-            <div className={`rounded-2xl border p-6 ${card}`}>
-              <h2 className={`text-sm font-semibold uppercase tracking-wider mb-4 ${muted}`}>
-                Pool Health
-              </h2>
-              <MetricGrid cols={4}>
-                {[
-                  { label: 'Available',    wei: poolData.availableWei    ?? '0', color: 'text-green-400'  },
-                  { label: 'Lent Out',     wei: poolData.totalLentWei    ?? '0', color: 'text-yellow-400' },
-                  { label: 'Total Funded', wei: poolData.totalFundedWei  ?? '0', color: 'text-indigo-400' },
-                  { label: 'Bad Debt',     wei: poolData.totalBadDebtWei ?? '0', color: 'text-red-400'    },
-                ].map((p) => (
-                  <div key={p.label} className={`rounded-xl border p-3 ${
-                    isDark ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50 border-slate-200'
-                  }`}>
-                    <div className={`text-xs ${muted} mb-1`}>{p.label}</div>
-                    <div className={`text-sm font-bold ${p.color}`}>
-                      <OGAmount wei={p.wei} decimals={2} />
-                    </div>
+          <div className={`rounded-2xl border p-6 ${card}`}>
+            <h2 className={`text-sm font-semibold uppercase tracking-wider mb-4 ${muted}`}>
+              Pool Health
+            </h2>
+            <MetricGrid cols={4}>
+              {[
+                { label: 'Available',    wei: poolData.availableWei,    color: 'text-green-400'  },
+                { label: 'Lent Out',     wei: poolData.totalLentWei,    color: 'text-yellow-400' },
+                { label: 'Total Funded', wei: poolData.totalFundedWei,  color: 'text-indigo-400' },
+                { label: 'Bad Debt',     wei: poolData.totalBadDebtWei, color: 'text-red-400'    },
+              ].map((p) => (
+                <div key={p.label} className={`rounded-xl border p-3 ${
+                  isDark ? 'bg-slate-800/50 border-slate-700' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className={`text-xs ${muted} mb-1`}>{p.label}</div>
+                  <div className={`text-sm font-bold ${p.color}`}>
+                    <OGAmount wei={p.wei} decimals={2} />
                   </div>
-                ))}
-              </MetricGrid>
-            </div>
-          )}
+                </div>
+              ))}
+            </MetricGrid>
+          </div>
         </div>
       </div>
 
-      {/* Work history */}
       <div className={`rounded-2xl border p-6 ${card}`}>
         <div className="flex items-center justify-between mb-4">
           <h2 className={`text-sm font-semibold uppercase tracking-wider ${muted}`}>
@@ -216,7 +212,6 @@ export function Dashboard() {
         }
       </div>
 
-      {/* Agent address */}
       {address && (
         <div className="text-center">
           <ChainScanLink
