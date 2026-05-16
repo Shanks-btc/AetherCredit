@@ -9,7 +9,6 @@
 [![Live Demo](https://img.shields.io/badge/Live-aether--credit.vercel.app-indigo)](https://aether-credit.vercel.app)
 [![0G Mainnet](https://img.shields.io/badge/Network-0G%20Mainnet%2016661-green)](https://explorer.0g.ai/mainnet)
 [![GitHub](https://img.shields.io/badge/GitHub-AetherCredit-black)](https://github.com/Shanks-btc/AetherCredit)
-[![X](https://img.shields.io/badge/X-(https://x.com/Shank_btc](https://x.com/i/status/2055606951598313668)
 
 
 
