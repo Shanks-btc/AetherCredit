@@ -19,7 +19,7 @@
 ## What AetherCredit Does
 
 
-Most AI agents running on 0G Compute run out of funds and stop. AetherCredit diagnoses any agent wallet you hold, reads its full verified compute history from WorkRegistry on 0G Chain, scores it using a closed-form algorithm, jobScore + spendScore + ageScore, no oracle — and disburses working capital from a shared credit pool atomically. The agent never needs human approval. You keep full custody of your wallet and repayment happens automatically from agent earnings.
+Most AI agents running on 0G Compute run out of funds and stop. AetherCredit diagnoses any agent wallet you hold, reads its full verified compute history from WorkRegistry on 0G Chain, scores it using a closed-form algorithm, jobScore + spendScore + ageScore, no oracle and disburses working capital from a shared credit pool atomically. The agent never needs human approval. You keep full custody of your wallet and repayment happens automatically from agent earnings.
 Every credit score traces directly to TEE-attested 0G Compute job receipts, VERIFIED on-chain, not estimated. Every finished credit decision is anchored on 0G Chain through WorkRegistry, archived to 0G Storage permanently, and readable by any protocol without touching the AetherCredit API. Three independent verification surfaces. No AetherCredit server in the trust path.
 AetherCredit turns verified compute history into financial identity.
 
