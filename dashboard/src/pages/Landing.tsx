@@ -1,4 +1,4 @@
-import { useNavigate }                    from 'react-router-dom'
+﻿import { useNavigate }                    from 'react-router-dom'
 import { useTheme }                       from '../lib/theme'
 import { ChainScanLink }                  from '../components/shared/ChainScanLink'
 import { MOCK_PROTOCOL_STATS }            from '../data/mock'
@@ -23,17 +23,7 @@ export function Landing() {
             <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">Æ</div>
             <span className="font-bold text-base">AetherCredit</span>
           </div>
-          <div className="hidden sm:flex items-center gap-6">
-            {[
-              { label: 'Agents',   to: '/agents'   },
-              { label: 'Economy',  to: '/economy'  },
-              { label: 'Waitlist', to: '/waitlist' },
-            ].map((link) => (
-              <button key={link.to} onClick={() => navigate(link.to)} className={`text-sm transition-colors ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-500 hover:text-slate-900'}`}>
-                {link.label}
-              </button>
-            ))}
-          </div>
+
           <div className="flex items-center gap-3">
             <button onClick={toggleTheme} className={`h-8 w-8 rounded-lg flex items-center justify-center text-sm transition-colors ${isDark ? 'bg-slate-800 border border-slate-700 text-slate-400' : 'bg-slate-100 border border-slate-200 text-slate-500'}`}>
               {isDark ? '☀️' : '🌙'}
@@ -42,7 +32,7 @@ export function Landing() {
               onClick={() => navigate('/onboard')}
               className="rounded-lg bg-indigo-600 hover:bg-indigo-500 px-4 py-1.5 text-sm text-white font-medium transition-colors"
             >
-              Get Started
+              Subscribe
             </button>
           </div>
         </div>
@@ -74,7 +64,7 @@ export function Landing() {
               onClick={() => navigate('/onboard')}
               className="rounded-xl bg-indigo-600 hover:bg-indigo-500 px-8 py-3.5 text-base font-semibold text-white transition-all hover:scale-105"
             >
-              Get Started →
+              Subscribe →
             </button>
             <button
               onClick={() => navigate('/waitlist')}
@@ -269,14 +259,15 @@ export function Landing() {
         <div className={`rounded-3xl border p-12 text-center ${isDark ? 'bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border-indigo-500/20' : 'bg-gradient-to-br from-indigo-50 to-purple-50 border-indigo-200'}`}>
           <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>Ready to integrate?</h2>
           <p className={`text-base max-w-xl mx-auto mb-8 ${muted}`}>
-            AetherCredit is live on 0G Mainnet. Connect your wallet to view your credit profile or join the waitlist to integrate into your protocol.
+            AetherCredit is live on 0G Mainnet. Subscribe to view your credit profile or join the waitlist to integrate into your protocol.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate('/onboard')}
               className="rounded-xl bg-indigo-600 hover:bg-indigo-500 px-8 py-3.5 text-base font-semibold text-white transition-all hover:scale-105"
             >
-              Subscribe →            </button>
+              Subscribe →
+            </button>
             <button
               onClick={() => navigate('/waitlist')}
               className={`rounded-xl border px-8 py-3.5 text-base font-semibold transition-all ${isDark ? 'border-indigo-500/30 text-indigo-400 hover:border-indigo-500/60' : 'border-indigo-200 text-indigo-600 hover:border-indigo-300'}`}
