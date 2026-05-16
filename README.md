@@ -11,7 +11,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-AetherCredit-black)](https://github.com/Shanks-btc/AetherCredit)
 [![X](https://img.shields.io/badge/X-@pkelvin856-blue)](https://x.com/i/status/2055606951598313668)
 
-> *Credit for Agents. Built on Proof.*
+
 
 </div>
 
@@ -24,9 +24,6 @@ AI agents are economic actors without credit. Every agent running on 0G Compute 
 **AetherCredit turns verified compute history into financial identity.**
 
 An agent runs a 0G Compute job → TEE-attested receipt submitted to WorkRegistry on 0G Chain → CreditScorer reads history and computes a credit score → CreditVault releases working capital instantly. No human approval. No oracle. No middleman.
-
-### One-Liner
-> *AetherCredit gives AI agents a credit score from verified compute work — so they can borrow working capital with no human in the loop.*
 
 ---
 
@@ -418,7 +415,7 @@ AetherCredit/
 | **Frontend** | https://aether-credit.vercel.app |
 | **Backend API** | https://aethercredit.onrender.com |
 | **GitHub** | https://github.com/Shanks-btc/AetherCredit |
-| **Demo Video** | *(YouTube link)* |
+| **Demo Video** | https://youtu.be/A8U9ZQ-ht4Q?feature=shared |
 | **X Thread** | https://x.com/i/status/2055606951598313668 |
 | **WorkRegistry** | https://explorer.0g.ai/mainnet/address/0x2B1F86F72A1112C3390FdFC8c4A1C5b21BA2d6DC |
 | **CreditScorer** | https://explorer.0g.ai/mainnet/address/0x6902b2F9BFfb492B86D3BF1D91Ab541C2ED31602 |
@@ -582,19 +579,6 @@ The frontend demonstrates the complete user journey:
 | Economy | `/economy` | Protocol economy metrics and activity feed |
 
 
----
-
-## Why AetherCredit Wins on 0G
-
-Most projects using 0G store data there. AetherCredit uses 0G Compute TEE receipts as **financial collateral** — a fundamentally different and deeper integration.
-
-| Typical 0G Project | AetherCredit |
-|---|---|
-| Stores data on 0G Storage | Uses 0G Compute output as financial collateral |
-| One 0G component | Three 0G components — all load-bearing |
-| Could work on another chain | Cannot exist without 0G |
-
-**The credit score IS the compute history. You cannot separate AetherCredit from 0G.**
 
 ---
 
@@ -609,6 +593,19 @@ Most projects using 0G store data there. AetherCredit uses 0G Compute TEE receip
 | **GitHub** | https://github.com/Shanks-btc/AetherCredit |
 | **X Post** | https://x.com/i/status/2055606951598313668 |
 
+
+---
+
+## Early Adopters
+
+AetherCredit was tested by real users during the hackathon period. All agent registrations are verifiable on 0G Explorer.
+
+| Agent | Type | Plan | Status |
+|---|---|---|---|
+| John | Trading | Pro | Active |
+| Mary | Orchestrator | Explorer | Active |
+| Ann | Prediction Market | Explorer | Active |
+
 ---
 
 ## Team
@@ -617,16 +614,8 @@ Most projects using 0G store data there. AetherCredit uses 0G Compute TEE receip
 
 | Channel | Handle |
 |---|---|
-| X | [@pkelvin856](https://x.com/pkelvin856) |
+| X | [@Shank_btc](https://x.com/Shank_btc) |
 | GitHub | [Shanks-btc](https://github.com/Shanks-btc) |
 | Email | pkelvin856@gmail.com |
 
 ---
-
-<div align="center">
-
-**AetherCredit — Credit for Agents. Built on Proof.**
-
-*Built for the 0G APAC Hackathon 2026*
-
-</div>
